@@ -17,7 +17,7 @@ double* gerarAleatorios(int n) {
     srand(time(NULL));
     
     for(int i = 0 ; i < n ; i++) {
-        vetor[i] = ((rand() % 100) + 1);
+        vetor[i] = ((rand() % 5) + 1);
     }
 
     return vetor;

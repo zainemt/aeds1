@@ -2,8 +2,12 @@
 #include<stdlib.h>
 #include<time.h>
 
+int* alocarVetor(int n) {
+    return (int*) malloc(n * sizeof(int));
+}
+
 int* gerarVetor(int n) {
-    int* vetor = (int*) malloc(n * sizeof(int));
+    int* vetor = alocarVetor(n);
     srand(time(NULL));
 
     for(int i = 0 ; i < n ; i++) {
@@ -13,17 +17,17 @@ int* gerarVetor(int n) {
     return vetor;
 }
 
-int* inverter(int* vetor, int n) {
-    int* invertido = (int*) malloc(n * sizeof(int));
+int* inverterVetor(int* vetor, int n) {
+    int* vetorInvertido = alocarVetor(n);
 
     int aux = n;
     for(int i = 0 ; i < n ; i++) {
-        invertido[i] = vetor[aux - 1];
+        vetorInvertido[i] = vetor[aux - 1];
         aux--;
     }
 
-    return invertido;
-}
+    return vetorInvertido;
+} 
 
 int main() {
     int n;
@@ -31,7 +35,7 @@ int main() {
     scanf("%d", &n);
 
     int* X = gerarVetor(n);
-    int* Y = inverter(X, n);
+    int* Y = inverterVetor(X, n);
     
     for (int i = 0 ; i < n ; i++) {
         printf("%d ", Y[i]);
