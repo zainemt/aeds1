@@ -43,7 +43,8 @@
         "typeinfo": "cpp",
         "stdio.h": "c",
         "ctime": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "cstring": "cpp"
     },
     "C_Cpp.default.compilerPath": "C:/MinGW/bin/g++.exe"
 }

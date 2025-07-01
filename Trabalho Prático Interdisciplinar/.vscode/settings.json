@@ -1,0 +1,8 @@
+{
+  "C_Cpp.errorSquiggles": "enabled",
+  "files.associations": {
+    "*.dbclient-js": "javascript",
+    "*.css": "tailwindcss",
+    "string": "cpp"
+  }
+}

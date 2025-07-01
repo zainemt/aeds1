@@ -13,6 +13,9 @@ public:
     Loja() {};
     Loja(string nome, string dataDeNascimento, string endereco, string telefone)
     {
+        if (nome == "" || dataDeNascimento == "" || endereco == "" || telefone == "") {
+            throw new runtime_error("Uma ou mais informações inválidas. \n");
+        }
         this->nome = nome;
         this->dataDeNascimento = dataDeNascimento;
         this->endereco = endereco;
@@ -49,7 +52,11 @@ int main()
         cin >> endereco;
         cout << "Insira o telefone do ciente" << endl;
         cin >> telefone;
-        clientes[i] = new Loja(nome, dataDeNascimento, endereco, telefone);
+        try {
+            clientes[i] = new Loja(nome, dataDeNascimento, endereco, telefone);
+        } catch (runtime_error e) {
+            e.what();
+        }
        }
 
     for (int i = 0; i < n; i++)
